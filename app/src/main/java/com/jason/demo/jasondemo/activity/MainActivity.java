@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.tab_setting:
+                startActivity(new Intent(this,SettingActivity.class));
                 break;
             default:
                 break;
