@@ -9,8 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.jason.demo.jasondemo.R;
 import com.jason.demo.jasondemo.fragment.ButlerFragment;
@@ -21,6 +19,9 @@ import com.jason.demo.jasondemo.fragment.WechatFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 首页
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //TabLayout
     private TabLayout mTablayout;

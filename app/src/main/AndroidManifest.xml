@@ -11,17 +11,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/NoActivityFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MainActivity">
+
+        </activity>
         <activity
             android:name=".activity.SettingActivity"
-            android:label="@string/title_activity_setting"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_setting" />
+        <activity android:name=".activity.BaseActivity" />
+        <activity
+            android:name=".activity.GuideActivity"
+            android:theme="@style/NoActivityFullScreen" />
     </application>
 
 </manifest>
