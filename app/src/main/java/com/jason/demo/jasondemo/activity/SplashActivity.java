@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.jason.demo.jasondemo.R;
+import com.jason.demo.jasondemo.account.LoginActivity;
 import com.jason.demo.jasondemo.utils.ShareUtils;
 import com.jason.demo.jasondemo.utils.StaticClass;
 import com.jason.demo.jasondemo.utils.Tools;
@@ -28,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
                     if (isFirst()) {
                         startActivity(new Intent(SplashActivity.this,GuideActivity.class));
                     }else{
-                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                        startActivity(new Intent(SplashActivity.this,LoginActivity.class));
                     }
                     finish();
                     break;
@@ -54,7 +55,7 @@ public class SplashActivity extends AppCompatActivity {
     private TextView tv;
     private void initView() {
         tv = (TextView) findViewById(R.id.tv);
-        handler.sendEmptyMessageDelayed(StaticClass.HANDLER_SPLASH, 10000);
+        handler.sendEmptyMessageDelayed(StaticClass.HANDLER_SPLASH, 0);
     }
 
     /**
