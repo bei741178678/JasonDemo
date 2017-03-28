@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">JasonDemo</string>
     <string name="tab01">功能列表</string>
-    <string name="tab02">微信精选</string>
-    <string name="tab03">美女社区</string>
+    <string name="tab02">精选</string>
+    <string name="tab03">社区</string>
     <string name="tab04">个人中心</string>
 
     <!-- TODO: Remove or change this placeholder text -->

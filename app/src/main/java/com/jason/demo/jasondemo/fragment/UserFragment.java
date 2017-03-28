@@ -28,7 +28,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UserFragment extends Fragment implements View.OnClickListener{
+public class UserFragment extends Fragment implements View.OnClickListener {
 
 
     public UserFragment() {
@@ -41,10 +41,11 @@ public class UserFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
         initView(view);
-        
-        
+
+
         return view;
     }
+
     private Button btn_exit_user;
     private EditText et_user;
     private EditText et_sex;
@@ -54,6 +55,7 @@ public class UserFragment extends Fragment implements View.OnClickListener{
     private Button btn_update_user;
     private CircleImageView civ_user;
     private TextView tv_fastEmail;//快递查询
+
     private void initView(View view) {
         civ_user = (CircleImageView) view.findViewById(R.id.civ_user);
         civ_user.setOnClickListener(this);
@@ -81,10 +83,13 @@ public class UserFragment extends Fragment implements View.OnClickListener{
 
     private void updateInfo() {
         MyUser myUser = BmobUser.getCurrentUser(MyUser.class);
-        et_user.setText(myUser.getUsername());
-        et_sex.setText(myUser.isSex()?"男":"女");
-        et_age.setText(myUser.getAge()+"");
-        et_desc.setText(myUser.getDesc());
+        if (myUser != null) {
+
+            et_user.setText(myUser.getUsername());
+            et_sex.setText(myUser.isSex() ? "男" : "女");
+            et_age.setText(myUser.getAge() + "");
+            et_desc.setText(myUser.getDesc());
+        }
     }
 
     private void setEnable(boolean is) {
@@ -97,7 +102,7 @@ public class UserFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_exit_user:
                 MyUser.logOut();
                 BmobUser currentUser = MyUser.getCurrentUser();
@@ -113,33 +118,33 @@ public class UserFragment extends Fragment implements View.OnClickListener{
                 String age = et_age.getText().toString().trim();
                 String sex = et_sex.getText().toString().trim();
                 String desc = et_desc.getText().toString().trim();
-                if(!TextUtils.isEmpty(username)&!TextUtils.isEmpty(age)&!TextUtils.isEmpty(sex)){
+                if (!TextUtils.isEmpty(username) & !TextUtils.isEmpty(age) & !TextUtils.isEmpty(sex)) {
                     MyUser myUser = new MyUser();
                     myUser.setUsername(username);
                     myUser.setAge(Integer.parseInt(age));
-                    if(sex.equals("男")){
+                    if (sex.equals("男")) {
                         myUser.setSex(true);
-                    }else{
+                    } else {
                         myUser.setSex(false);
                     }
-                    if(TextUtils.isEmpty(desc)){
+                    if (TextUtils.isEmpty(desc)) {
                         desc = "这个人很懒，什么都没有写";
                     }
                     BmobUser bombUser = BmobUser.getCurrentUser();
                     myUser.update(bombUser.getObjectId(), new UpdateListener() {
                         @Override
                         public void done(BmobException e) {
-                            if(e==null){
+                            if (e == null) {
                                 setEnable(false);
                                 btn_update_user.setVisibility(View.GONE);
-                                Toast.makeText(getActivity(),"修改成功",Toast.LENGTH_LONG).show();
-                            }else {
-                                Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), "修改成功", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         }
                     });
-                }else{
-                    Toast.makeText(getActivity(),"输入框不能为空",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getActivity(), "输入框不能为空", Toast.LENGTH_LONG).show();
                     return;
                 }
 

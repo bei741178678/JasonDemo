@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="10dp">
+    <!--波纹效果-->
+    <!--android:background="?android:attr/selectableItemBackground"-->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="phoneName" />
+
+    <TextView
+        android:id="@+id/tv_context"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/txt_666666"
+        android:text="sdaksdhjashdjashdjkahsjkhdljkahsjkdhjaslhjdhasjdhjlashjdklkjasjhdjh" />
+
+    <LinearLayout
+        android:id="@+id/ll_pics"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:scrollbars="horizontal"
+        ></LinearLayout>
+
+</LinearLayout>
