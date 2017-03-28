@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jason.demo.jasondemo.module.eventbus.EventBus_MainActivity">
+
+    <Button
+        android:id="@+id/btn01"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="跳转到发送页面"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/btn02"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="发送粘性事件到发送页面"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示结果："
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="158dp" />
+</LinearLayout>
